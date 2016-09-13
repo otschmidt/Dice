@@ -7,8 +7,8 @@ void setup()
 }
 void draw()
 {
+	bob.roll(); 
 	bob.show();
-	bob.roll();
 	//your code here
 
 }
@@ -22,10 +22,10 @@ class Die //models one single dice cube
 	//variable declarations here
 	Die(int x, int y) //constructor
 	{
+		roll();
 		x=250;
 		y=250;
-		dieNum = 1;
-		dieSize = 10;
+		dieSize = 5;
 	}
 	
 	void roll()
@@ -38,27 +38,33 @@ class Die //models one single dice cube
 		fill(255);
 		rect(x,y,50,50,15);
 		fill(0);
-
-		if(dieNum == 1)
-		{
+		if(dieNum == 1){
 			ellipse(x+25,y+25,dieSize,dieSize);
 		}
-		else if(dieNum == 2)
-		{
+		if(dieNum == 2){
 			ellipse(x+15, y+15, dieSize,dieSize);
-			ellipse(x+15,y+25, dieSize,dieSize);
+			ellipse(x+35,y+35, dieSize,dieSize);
 		}
-		else if(dieNum == 3);
-		{
-			ellipse(x+25,y+25,dieSize,dieSize);
-			ellipse(x+25, y+15, dieSize,dieSize);
+		if(dieNum == 3){
+			ellipse(x+35,y+35,dieSize,dieSize);
+			ellipse(x+35, y+15, dieSize,dieSize);
 			ellipse(x+15,y+25, dieSize,dieSize);
-		}
-		else if(dieNum == 4);
-		{
-			ellipse(x+25, y+15, dieSize,dieSize);
-			ellipse(x+25, y+ 15, dieSize, dieSize);
-			ellipse(x+15,y+25, dieSize,dieSize);
+		} 
+		if(dieNum == 4){
+			ellipse(x+35, y+15, dieSize,dieSize);
+			ellipse(x+35, y+ 35, dieSize, dieSize);
+			ellipse(x+15, y+35, dieSize,dieSize);
+			ellipse(x + 15, y + 15, dieSize, dieSize);
+ 		}
+ 		if(dieNum == 5){
+            ellipse(x+35,y+35,dieSize,dieSize);
+            ellipse(x+35, y+15, dieSize,dieSize);
+			ellipse(x+35, y+ 25, dieSize, dieSize);
+			ellipse(x+15, y+35, dieSize,dieSize);
+			ellipse(x +15, y + 15, dieSize, dieSize);
+ 		}
+ 		if(dieNum == 6);{
+
  		}
  	}
 

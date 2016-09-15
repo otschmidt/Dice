@@ -8,7 +8,8 @@ void setup()
 }
 void draw()
 {
-	
+	background((int)(Math.random()*150),100,150);
+	int sum = 0;
 	//your code here
 	for(int myX=50 ; myX<=400 ; myX = myX+100)
 	{
@@ -17,16 +18,18 @@ void draw()
 			Die bob = new Die(myX,myY);
 			bob.roll();
 			bob.show();
-			total = total+dieNum;
+			total = total+ bob.dieNum;
+			sum = sum + bob.dieNum;
 		}
 			
 	}
-	text("Total " + total, 50, 500);
-
+	text("Total of all rolls " + total, 50, 500);
+	text("Current total " + sum, 200, 500);
 }
 void mousePressed()
 {
 	redraw();
+
 }
 class Die //models one single dice cube
 {
@@ -47,7 +50,7 @@ class Die //models one single dice cube
 
 	void show()
 	{
-		fill(255);
+		fill((int)(Math.random()*150),100,150);
 		rect(x,y,50,50,15);
 		fill(0);
 		if(dieNum == 1){
